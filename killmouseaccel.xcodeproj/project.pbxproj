@@ -28,7 +28,7 @@
 
 /* Begin PBXFileReference section */
 		75D7C9801428CB5500D8FD1D /* killmouseaccel */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = killmouseaccel; sourceTree = BUILT_PRODUCTS_DIR; };
-		75D7C9871428CB5500D8FD1D /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		75D7C9871428CB5500D8FD1D /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; usesTabs = 0; };
 		75D7C9891428CB5500D8FD1D /* killmouseaccel.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = killmouseaccel.1; sourceTree = "<group>"; };
 		75D7C9901428CE3D00D8FD1D /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		75D7C9921428CEA700D8FD1D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
