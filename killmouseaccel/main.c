@@ -15,7 +15,6 @@
 
 int main(int argc, char **argv)
 {
-    const int32_t accel = -0x10000; // if this ever becomes a scale factor, we set it to one
     if(argc < 2) {
         fprintf(stderr, "Give me mouse and/or trackpad as arguments\n");
         return 1;
@@ -39,6 +38,7 @@ int main(int argc, char **argv)
             continue;
         }
 
+        const int32_t accel = -0x10000; // if this ever becomes a scale factor, we set it to one
         if(type && IOHIDSetParameter(handle, type, &accel, sizeof accel) != KERN_SUCCESS) {
             fprintf(stderr, "Failed to kill %s accel\n", argv[i]);
         }
