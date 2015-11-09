@@ -20,24 +20,26 @@ int main(int argc, char **argv)
         fprintf(stderr, "Give me mouse and/or trackpad as arguments\n");
         return 1;
     }
-    
+
     io_connect_t handle = NXOpenEventStatus();
-    if(handle) {
-        int i;
-        for(i=1; i<argc; i++) {
-            CFStringRef type = 0;
-            
-            if(strcmp(argv[i], "mouse") == 0)
-                type = CFSTR(kIOHIDMouseAccelerationType);
-            else if(strcmp(argv[i], "trackpad") == 0)
-                type = CFSTR(kIOHIDTrackpadAccelerationType);
-            
-            if(type && IOHIDSetParameter(handle, type, &accel, sizeof accel) != KERN_SUCCESS)
-                fprintf(stderr, "Failed to kill %s accel\n", argv[i]);
-        }
-        NXCloseEventStatus(handle);
-    } else
+    if(!handle) {
         fprintf(stderr, "No handle\n");
-    
+        return 2;
+    }
+
+    int i;
+    for(i=1; i<argc; i++) {
+        CFStringRef type = 0;
+
+        if(strcmp(argv[i], "mouse") == 0)
+            type = CFSTR(kIOHIDMouseAccelerationType);
+        else if(strcmp(argv[i], "trackpad") == 0)
+            type = CFSTR(kIOHIDTrackpadAccelerationType);
+
+        if(type && IOHIDSetParameter(handle, type, &accel, sizeof accel) != KERN_SUCCESS)
+            fprintf(stderr, "Failed to kill %s accel\n", argv[i]);
+    }
+
+    NXCloseEventStatus(handle);
     return 0;
 }
