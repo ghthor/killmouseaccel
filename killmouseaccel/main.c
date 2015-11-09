@@ -27,8 +27,7 @@ int main(int argc, char **argv)
         return 2;
     }
 
-    int i;
-    for(i=1; i<argc; i++) {
+    for(int i=1; i<argc; i++) {
         CFStringRef type = 0;
 
         if(strcmp(argv[i], "mouse") == 0)
