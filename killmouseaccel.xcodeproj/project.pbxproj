@@ -107,6 +107,8 @@
 /* Begin PBXProject section */
 		75D7C9771428CB5400D8FD1D /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 75D7C97A1428CB5400D8FD1D /* Build configuration list for PBXProject "killmouseaccel" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -214,6 +216,7 @@
 				75D7C98F1428CB5500D8FD1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
