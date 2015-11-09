@@ -30,13 +30,15 @@ int main(int argc, char **argv)
     for(int i=1; i<argc; i++) {
         CFStringRef type = 0;
 
-        if(strcmp(argv[i], "mouse") == 0)
+        if(strcmp(argv[i], "mouse") == 0) {
             type = CFSTR(kIOHIDMouseAccelerationType);
-        else if(strcmp(argv[i], "trackpad") == 0)
+        } else if(strcmp(argv[i], "trackpad") == 0) {
             type = CFSTR(kIOHIDTrackpadAccelerationType);
+        }
 
-        if(type && IOHIDSetParameter(handle, type, &accel, sizeof accel) != KERN_SUCCESS)
+        if(type && IOHIDSetParameter(handle, type, &accel, sizeof accel) != KERN_SUCCESS) {
             fprintf(stderr, "Failed to kill %s accel\n", argv[i]);
+        }
     }
 
     NXCloseEventStatus(handle);
