@@ -41,7 +41,10 @@ int main(int argc, char **argv)
         const int32_t accel = -0x10000; // if this ever becomes a scale factor, we set it to one
         if(type && IOHIDSetParameter(handle, type, &accel, sizeof accel) != KERN_SUCCESS) {
             fprintf(stderr, "Failed to kill %s accel\n", argv[i]);
+            continue;
         }
+
+        fprintf(stdout, "Removed %s accel\n", argv[i]);
     }
 
     NXCloseEventStatus(handle);
