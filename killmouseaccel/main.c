@@ -34,6 +34,9 @@ int main(int argc, char **argv)
             type = CFSTR(kIOHIDMouseAccelerationType);
         } else if(strcmp(argv[i], "trackpad") == 0) {
             type = CFSTR(kIOHIDTrackpadAccelerationType);
+        } else {
+            fprintf(stderr, "Invalid parameter '%s'\n", argv[i]);
+            continue;
         }
 
         if(type && IOHIDSetParameter(handle, type, &accel, sizeof accel) != KERN_SUCCESS) {
